@@ -9,6 +9,21 @@ class AddressBook {
         contacts.add(contact);
     }
 
+    // UC2: Edit an existing contact
+    public void editContact(String firstName, String lastName, Contact updatedContact) {
+        for (Contact contact : contacts) {
+            if (contact.getFirstName().equals(firstName) && contact.getLastName().equals(lastName)) {
+                contact.setAddress(updatedContact.getAddress());
+                contact.setCity(updatedContact.getCity());
+                contact.setState(updatedContact.getState());
+                contact.setZip(updatedContact.getZip());
+                contact.setPhoneNumber(updatedContact.getPhoneNumber());
+                contact.setEmail(updatedContact.getEmail());
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+    }
     // Display all contacts
     public void displayContacts() {
         for (Contact contact : contacts) {
