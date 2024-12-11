@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class AddressBook {
@@ -94,6 +91,12 @@ class AddressBook {
         return contacts.stream()
                 .collect(Collectors.groupingBy(contact -> contact.getCity() + ", " + contact.getState(), Collectors.counting()));
     }
+
+    // UC11: Sort entries alphabetically by name, city, state, or zip
+    public void sortContacts(Comparator<Contact> comparator) {
+        contacts.sort(comparator);
+    }
+
     // Display all contacts
     public void displayContacts() {
         for (Contact contact : contacts) {

@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -57,6 +58,11 @@ public class Main {
         countResults.forEach((key, value) -> {
             System.out.println(key + " -> " + value);
         });
+
+        // UC11: Sort by first name
+        System.out.println("\nContacts Sorted by First Name:");
+        addressBook.sortContacts(Comparator.comparing(Contact::getFirstName));
+        addressBook.displayContacts();
     }
 }
 
