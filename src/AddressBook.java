@@ -24,6 +24,11 @@ class AddressBook {
         }
         System.out.println("Contact not found.");
     }
+
+    // UC3: Delete a contact
+    public void deleteContact(String firstName, String lastName) {
+        contacts.removeIf(contact -> contact.getFirstName().equals(firstName) && contact.getLastName().equals(lastName));
+    }
     // Display all contacts
     public void displayContacts() {
         for (Contact contact : contacts) {

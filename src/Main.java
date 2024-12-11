@@ -12,6 +12,8 @@ public class Main {
         Contact updatedContact = new Contact("John", "Doe", "456 Elm St", "Springfield", "Illinois", "62704", "9876543210", "john.updated@example.com");
         addressBook.editContact("John", "Doe", updatedContact);
 
+        // UC3: Deleting a contact
+        addressBook.deleteContact("John", "Doe");
     }
 }
 
