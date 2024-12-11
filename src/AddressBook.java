@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 class AddressBook {
     private List<Contact> contacts = new ArrayList<>();
@@ -47,6 +49,15 @@ class AddressBook {
     }
 
 
+    // UC6: View contacts by city or state
+    public Map<String, List<Contact>> viewContactsByCityOrState() {
+        Map<String, List<Contact>> locationMap = new HashMap<>();
+        for (Contact contact : contacts) {
+            locationMap.computeIfAbsent(contact.getCity(), k -> new ArrayList<>()).add(contact);
+            locationMap.computeIfAbsent(contact.getState(), k -> new ArrayList<>()).add(contact);
+        }
+        return locationMap;
+    }
 
     // Display all contacts
     public void displayContacts() {

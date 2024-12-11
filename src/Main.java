@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -25,6 +26,11 @@ public class Main {
         // UC5: Search contacts by city or state
         List<Contact> searchResults = addressBook.searchByCityOrState("Chicago");
         System.out.println("Contacts in Chicago: " + searchResults);
+
+        // UC6: View contacts by city or state
+        Map<String, List<Contact>> viewMap = addressBook.viewContactsByCityOrState();
+        System.out.println("Contacts grouped by city/state: " + viewMap);
+
     }
 }
 
