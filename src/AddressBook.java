@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 class AddressBook {
     private List<Contact> contacts = new ArrayList<>();
@@ -85,6 +86,13 @@ class AddressBook {
             cityStateMap.computeIfAbsent(key, k -> new ArrayList<>()).add(contact);
         });
         return cityStateMap;
+    }
+
+
+    // UC10: Count persons by city or state
+    public Map<String, Long> countByCityOrState() {
+        return contacts.stream()
+                .collect(Collectors.groupingBy(contact -> contact.getCity() + ", " + contact.getState(), Collectors.counting()));
     }
     // Display all contacts
     public void displayContacts() {
