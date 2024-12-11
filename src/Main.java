@@ -43,6 +43,13 @@ public class Main {
         System.out.println("\nSearch Results for Springfield:");
         List<Contact> searchResults = addressBook.searchByCityOrState("Springfield");
         searchResults.forEach(System.out::println);
+
+        // UC9: View by city and state
+        System.out.println("\nView by City and State:");
+        Map<String, List<Contact>> viewResults = addressBook.viewByCityOrState();
+        viewResults.forEach((key, value) -> {
+            System.out.println(key + " -> " + value);
+        });
     }
 }
 

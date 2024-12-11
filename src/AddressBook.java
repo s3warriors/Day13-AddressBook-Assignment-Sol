@@ -77,7 +77,15 @@ class AddressBook {
                 .toList();
     }
 
-
+    // UC9: View persons by city or state
+    public Map<String, List<Contact>> viewByCityOrState() {
+        Map<String, List<Contact>> cityStateMap = new HashMap<>();
+        contacts.forEach(contact -> {
+            String key = contact.getCity() + ", " + contact.getState();
+            cityStateMap.computeIfAbsent(key, k -> new ArrayList<>()).add(contact);
+        });
+        return cityStateMap;
+    }
     // Display all contacts
     public void displayContacts() {
         for (Contact contact : contacts) {
