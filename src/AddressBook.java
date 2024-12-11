@@ -7,9 +7,9 @@ class AddressBook {
     private List<Contact> contacts = new ArrayList<>();
 
     // UC1: Add a contact
-    public void addContact(Contact contact) {
-        contacts.add(contact);
-    }
+//    public void addContact(Contact contact) {
+//        contacts.add(contact);
+//    }
 
     // UC2: Edit an existing contact
     public void editContact(String firstName, String lastName, Contact updatedContact) {
@@ -58,7 +58,17 @@ class AddressBook {
         }
         return locationMap;
     }
-
+    // UC7: Ensure no duplicate entries
+    public void addContact(Contact contact) {
+        boolean isDuplicate = contacts.stream()
+                .anyMatch(existingContact -> existingContact.getFirstName().equals(contact.getFirstName()) &&
+                        existingContact.getLastName().equals(contact.getLastName()));
+        if (!isDuplicate) {
+            contacts.add(contact);
+        } else {
+            System.out.println("Duplicate contact found. Cannot add.");
+        }
+    }
     // Display all contacts
     public void displayContacts() {
         for (Contact contact : contacts) {
