@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -14,6 +16,11 @@ public class Main {
 
         // UC3: Deleting a contact
         addressBook.deleteContact("John", "Doe");
+        // UC4: Adding multiple contacts
+        Contact contact2 = new Contact("Jane", "Smith", "789 Oak St", "Chicago", "Illinois", "60616", "1112223333", "jane.smith@example.com");
+        Contact contact3 = new Contact("Emily", "Johnson", "321 Pine St", "Peoria", "Illinois", "61615", "4445556666", "emily.j@example.com");
+        addressBook.addMultipleContacts(Arrays.asList(contact2, contact3));
+
     }
 }
 

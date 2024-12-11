@@ -29,6 +29,14 @@ class AddressBook {
     public void deleteContact(String firstName, String lastName) {
         contacts.removeIf(contact -> contact.getFirstName().equals(firstName) && contact.getLastName().equals(lastName));
     }
+    // UC4: Add multiple contacts (Batch addition)
+    public void addMultipleContacts(List<Contact> newContacts) {
+        contacts.addAll(newContacts);
+    }
+
+
+
+
     // Display all contacts
     public void displayContacts() {
         for (Contact contact : contacts) {
