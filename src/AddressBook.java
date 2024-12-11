@@ -35,6 +35,17 @@ class AddressBook {
     }
 
 
+    // UC5: Search contacts by city or state
+    public List<Contact> searchByCityOrState(String location) {
+        List<Contact> result = new ArrayList<>();
+        for (Contact contact : contacts) {
+            if (contact.getCity().equalsIgnoreCase(location) || contact.getState().equalsIgnoreCase(location)) {
+                result.add(contact);
+            }
+        }
+        return result;
+    }
+
 
 
     // Display all contacts

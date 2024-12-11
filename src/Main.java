@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -21,6 +22,9 @@ public class Main {
         Contact contact3 = new Contact("Emily", "Johnson", "321 Pine St", "Peoria", "Illinois", "61615", "4445556666", "emily.j@example.com");
         addressBook.addMultipleContacts(Arrays.asList(contact2, contact3));
 
+        // UC5: Search contacts by city or state
+        List<Contact> searchResults = addressBook.searchByCityOrState("Chicago");
+        System.out.println("Contacts in Chicago: " + searchResults);
     }
 }
 
