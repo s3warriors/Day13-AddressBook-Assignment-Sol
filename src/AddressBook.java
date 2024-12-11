@@ -38,15 +38,15 @@ class AddressBook {
 
 
     // UC5: Search contacts by city or state
-    public List<Contact> searchByCityOrState(String location) {
-        List<Contact> result = new ArrayList<>();
-        for (Contact contact : contacts) {
-            if (contact.getCity().equalsIgnoreCase(location) || contact.getState().equalsIgnoreCase(location)) {
-                result.add(contact);
-            }
-        }
-        return result;
-    }
+//    public List<Contact> searchByCityOrState(String location) {
+//        List<Contact> result = new ArrayList<>();
+//        for (Contact contact : contacts) {
+//            if (contact.getCity().equalsIgnoreCase(location) || contact.getState().equalsIgnoreCase(location)) {
+//                result.add(contact);
+//            }
+//        }
+//        return result;
+//    }
 
 
     // UC6: View contacts by city or state
@@ -69,6 +69,15 @@ class AddressBook {
             System.out.println("Duplicate contact found. Cannot add.");
         }
     }
+    // UC8: Search persons by city or state
+    public List<Contact> searchByCityOrState(String cityOrState) {
+        return contacts.stream()
+                .filter(contact -> contact.getCity().equalsIgnoreCase(cityOrState) ||
+                        contact.getState().equalsIgnoreCase(cityOrState))
+                .toList();
+    }
+
+
     // Display all contacts
     public void displayContacts() {
         for (Contact contact : contacts) {
