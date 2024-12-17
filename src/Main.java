@@ -7,7 +7,7 @@ import java.util.Map;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        AddressBook addressBook = new AddressBook();
+        AddressBook1 addressBook = new AddressBook1();
 
         // UC1: Adding a contact
 //        Contact contact1 = new Contact("John", "Doe", "123 Main St", "Springfield", "Illinois", "62704", "1234567890", "john.doe@example.com");
